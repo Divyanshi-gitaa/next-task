@@ -1,0 +1,12 @@
+body{
+    background: #000;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(105, 105, 255);
+}
