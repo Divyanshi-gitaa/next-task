@@ -22,6 +22,8 @@ const index = () => {
     dispatch(getAllUsers());
   }, [dispatch]);
 
+  // some 
+
   // loader
   if (isLoading) return <Loader />;
   if (Object.keys(allUsers).length > 0)
