@@ -24,8 +24,8 @@ const UserDetails = () => {
 
   if (Object.keys(user).length > 0)
     return (
-      <>
-        <Button variant="outline-success" href="/users">
+      <div className="details-container">
+        <Button variant="outline-success" href="/users" className="button">
           Back to home
         </Button>
         <Card
@@ -44,7 +44,7 @@ const UserDetails = () => {
             <Card.Text>Company Name: {user?.company?.name}</Card.Text>
           </Card.Body>
         </Card>
-      </>
+      </div>
     );
 };
 

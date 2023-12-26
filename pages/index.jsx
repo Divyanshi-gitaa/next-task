@@ -5,7 +5,7 @@ const index = () => {
   return (
     <Container className="d-flex flex-column align-items-center p-5 justify-center ">
       <h1>User list page</h1>
-      <Button href="/users">Users list page</Button>
+      <Button href="/users" className="button">Users list page</Button>
     </Container>
   );
 };
