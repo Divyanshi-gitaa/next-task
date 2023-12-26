@@ -1,39 +1,31 @@
 import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import { useRouter } from "next/router";
 import { Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-
-// Action
 import { getUserDetailsById } from "@/actions/UserAction";
-
-// Component
 import Loader from "@/component/Loader";
+import { useRouter } from "next/router";
 
-const Users = () => {
-  // dispatch
+const UserDetails = () => {
   const dispatch = useDispatch();
-
-  // selector
   const user = useSelector((state) => state.user.userDetails);
   const isLoading = useSelector((state) => state.user.userDetailsLoading);
+  const router = useRouter();
 
-  // router
-  const { query } = useRouter();
-  const id = query.id;
+  // Get the id parameter from the URL
+  const { id } = router.query;
 
-  // useEffect
   useEffect(() => {
+    // Fetch user details using the id
     dispatch(getUserDetailsById({ id: +id }));
   }, [dispatch, id]);
 
-  // Loader
   if (isLoading) return <Loader />;
 
   if (Object.keys(user).length > 0)
     return (
       <>
-        <Button variant="outline-success" href="/">
+        <Button variant="outline-success" href="/users">
           Back to home
         </Button>
         <Card
@@ -56,4 +48,4 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default UserDetails;
