@@ -22,7 +22,7 @@ const Index = () => {
   if (isLoading) return <Loader />;
   if (Object.keys(allUsers).length > 0)
     return (
-      <div className="bg-dark text-white">
+      <div className="bg-dark text-white table-container">
         <h1 className="text-center">Users List</h1>
         <Table striped bordered hover variant="dark">
           <thead>
